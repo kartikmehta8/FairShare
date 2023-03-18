@@ -1,0 +1,48 @@
+GET http://localhost:5000/api/auth/users/esmemarie.sultan@gmail.com
+
+###
+
+POST http://localhost:5000/api/auth/users
+Content-Type: application/json
+
+{ 
+    "firstname": "Linda",
+    "lastname": "Michael",
+    "email": "linda@gmail.com",
+    "password": "password",
+    "organization_id": 1,
+    "state": "Sabah",
+    "country": "Malaysia"
+}
+
+###
+
+POST http://localhost:5000/api/auth/users/signin
+Content-Type: application/json
+
+{
+    "email":"jannahworks@gmail.com",
+    "password":"password",
+    "user":{
+            "email": "jannahworks@gmail.com",
+            "fullname": "Jannah Ahmad",
+            "group": "organizers",
+            "password": "$2b$07$g5y1iWLNsx8I3bt25sIML.xOVtYLrIu7n3npGeCtom3KuU5kDrHpW",
+            "uid": 4
+        }
+}
+
+###
+
+POST http://localhost:5000/api/auth/users/verify-token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjQsImVtYWlsIjoiamFubmFod29ya3NAZ21haWwuY29tIiwiZnVsbG5hbWUiOiJKYW5uYWggQS4iLCJncm91cCI6Im9yZ2FuaXplcnMiLCJpYXQiOjE2MTMwMDMxNTEsImV4cCI6MTYxMzAxMDM1MX0.gPmEYHlCqXwQgsfgxS_Nyy9MTnJcCFo-nv1Kejcpaj4",
+  "user": {
+    "uid": 4,
+    "email": "jannahworks@gmail.com",
+    "fullname": "Jannah A.",
+    "group": "organizers"
+  }
+}

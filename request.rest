@@ -1,0 +1,80 @@
+GET http://localhost:5000/api/events
+
+###
+
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{ 
+    "name": "CNY Cleanup",
+    "status": "active",
+    "description": "Gotong-royong at the old folk home.",
+    "organizer_id": 1,
+    "contactname": "Mary Michael",
+    "contactnum": "601332444000",
+    "totalvolunteer": 20,
+    "location": "Taiping"
+}
+
+###
+
+GET http://localhost:5000/api/events/organizer/1
+
+###
+
+DELETE http://localhost:5000/api/events/2
+
+###
+
+PUT http://localhost:5000/api/events/1
+Content-Type: application/json
+
+{
+    "closingdate": "2021-11-30",
+    "totalvolunteer": 15
+}
+###
+
+GET  http://localhost:5000/api/organizations
+
+###
+
+GET  http://localhost:5000/api/organizations/1
+
+###
+
+GET http://localhost:5000/api/volunteers/1
+
+###
+
+GET http://localhost:5000/api/volunteers/organizers/1
+
+###
+
+GET http://localhost:5000/api/volunteers/1/application-status/new
+
+###
+
+POST http://localhost:5000/api/volunteers
+Content-Type: application/json
+
+{ 
+    "event_id": 1,
+    "firstname": "Mustapa",
+    "lastname": "Samad",
+    "email": "volfive@gmail.com",
+    "state": "Selangor",
+    "contactnum": "123241546"
+}
+
+###
+
+PUT http://localhost:5000/api/volunteers/2
+Content-Type: application/json
+
+{
+    "dateproc": "2021-01-26",
+    "status": "approved"
+}
+
+###
